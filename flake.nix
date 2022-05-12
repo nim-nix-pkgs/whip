@@ -7,6 +7,22 @@
   inputs.flakeNimbleLib.type  = "github";
   inputs.flakeNimbleLib.inputs.nixpkgs.follows = "nixpkgs";
   
+  inputs."whip-master".dir   = "master";
+  inputs."whip-master".owner = "nim-nix-pkgs";
+  inputs."whip-master".ref   = "master";
+  inputs."whip-master".repo  = "whip";
+  inputs."whip-master".type  = "github";
+  inputs."whip-master".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."whip-master".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
+  inputs."whip-0_2".dir   = "0_2";
+  inputs."whip-0_2".owner = "nim-nix-pkgs";
+  inputs."whip-0_2".ref   = "master";
+  inputs."whip-0_2".repo  = "whip";
+  inputs."whip-0_2".type  = "github";
+  inputs."whip-0_2".inputs.nixpkgs.follows = "nixpkgs";
+  inputs."whip-0_2".inputs.flakeNimbleLib.follows = "flakeNimbleLib";
+  
   outputs = { self, nixpkgs, flakeNimbleLib, ...}@inputs:
   let 
     lib  = flakeNimbleLib.lib;
